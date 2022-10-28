@@ -9,7 +9,12 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  // Solution code here...
+  let max = arr.reduce((a, b) => {
+    if (b > a) {
+      return a - a + b;
+    } else return a;
+  }, 0);
+  return max;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -25,7 +30,8 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 };
 
 const getCourseKeys = (obj) => {
-  // Solution code here...
+  let objInfo = Object.keys(courseInfo);
+  return objInfo;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -37,7 +43,13 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  // Solution code here...
+  let presence = false;
+  for (let prop in obj) {
+    if (obj[prop] === value) {
+      presence = true;
+    }
+  }
+  return presence;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,7 +72,11 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  // Solution code here...
+  let new_arr = [];
+  for (let prop in obj) {
+    new_arr.push(`${prop}: ${obj[prop]}`);
+  }
+  return new_arr;
 };
 
 
@@ -116,7 +132,9 @@ const characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+  for (let el of arr) {
+    houses.push(el.house);
+  }
   return houses;
 };
 
@@ -133,7 +151,13 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
+  let presence = false;
+  for (let el of arr) {
+    if (el.name === character) {
+      if (el.children) presence = true;
+    }
+  }
+  return presence;
 
 };
 
