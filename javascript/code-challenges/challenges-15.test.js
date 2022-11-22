@@ -159,7 +159,6 @@ Here is a sample board:
   ['X', 'O', 'X'],
 ];
 ------------------------------------------------------------------------------------------------ */
-
 const ticTacHelper = (arr) => {
   if(arr[0] === arr[1] && arr[1] === arr[2] && !arr.includes('')){
     return true;
