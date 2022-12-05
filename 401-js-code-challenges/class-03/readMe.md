@@ -32,4 +32,4 @@ Algorithm:
 
   iii. else if the value at mid is greater than the search key, then recursively call the helper function, with start as start and mid -1 as end and return the result
 
-3. call the helper function with 0 as start and the length of the array - 1 as end, and return the result
+3. call the helper function with 0 as start and the length of the array - 1 as end, and return the results
