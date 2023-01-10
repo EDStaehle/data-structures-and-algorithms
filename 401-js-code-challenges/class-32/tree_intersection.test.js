@@ -1,0 +1,56 @@
+const tree_intersection = require('./tree_intersection');
+const { BinaryTree } = require('./tree')
+describe('checks intersections', () => {
+  it('will return the total number of duplicates', () => {
+    let tree1 = new BinaryTree();
+    tree1.add(100);
+    tree1.add(15);
+    tree1.add(78);
+    tree1.add(200);
+    tree1.add(150);
+    tree1.add(10);
+    tree1.add(50);
+    tree1.add(45);
+    tree1.add(110);
+    tree1.add(145);
+    let tree2 = new BinaryTree();
+    tree2.add(100);
+    tree2.add(30);
+    tree2.add(27);
+    tree2.add(150);
+    tree2.add(16);
+    tree2.add(15);
+    tree2.add(27);
+    tree2.add(45);
+    tree2.add(300);
+    tree2.add(500);
+    const results = tree_intersection(tree1, tree2);
+    expect(results.has(100, 15, 45, 150)).toBe(true);
+  });
+  it('will return correct if the expected return is not in the results', () => {
+    let tree1 = new BinaryTree();
+    tree1.add(100);
+    tree1.add(15);
+    tree1.add(78);
+    tree1.add(200);
+    tree1.add(150);
+    tree1.add(10);
+    tree1.add(50);
+    tree1.add(45);
+    tree1.add(110);
+    tree1.add(145);
+    let tree2 = new BinaryTree();
+    tree2.add(100);
+    tree2.add(30);
+    tree2.add(27);
+    tree2.add(150);
+    tree2.add(16);
+    tree2.add(15);
+    tree2.add(27);
+    tree2.add(45);
+    tree2.add(300);
+    tree2.add(500);
+    const results = tree_intersection(tree1, tree2);
+    expect(results.has(1000)).toBe(false);
+  });
+});
