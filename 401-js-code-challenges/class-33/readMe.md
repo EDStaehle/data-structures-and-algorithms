@@ -18,9 +18,23 @@ test to see if function has at least one repeated value
 Input and Output
 Input:
 
-Input Tree 1 Input Tree 2
+input:
+synonyms antonyms
+Key Value | Key Value
+diligent employed | diligent idle
+fond enamored | fond averse
+guide usher | guide follow
+outfit garb | flow jam
+wrath anger | wrath delight
 
-Output: [100,160,125,175,200,350,500]
+output:
+[
+["font", "enamored", "averse"],
+["wrath", "anger", "delight"],
+["diligent", "employed", "idle"],
+["outfit", "garb", NULL],
+["guide", "usher","follow"]
+]
 
 ## Approach & Efficiency
 
